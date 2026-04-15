@@ -1,4 +1,4 @@
-# 🔐 Authentication Abuse Chain — User Enumeration & Reset Flooding
+# 🔐 Authentication Abuse Chain : User Enumeration & Reset Flooding
 
 ## 📌 Context
 
