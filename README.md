@@ -127,9 +127,9 @@ This work reflects a **practical offensive security skillset** aligned with:
 
 ## 📬 Contact
 
-Security inquiries / collaboration:
+collaboration:
 
-**security@sentrytrace.com**
+**contact@sentrytrace.com**
 
 ---
 
