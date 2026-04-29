@@ -1,83 +1,141 @@
-# SentryTrace Research
+# SentryTrace — Offensive Attack Surface Intelligence
 
-SentryTrace is an independent research initiative focused on discovering exposed assets on the public internet through passive reconnaissance.
+SentryTrace is an independent security research initiative focused on identifying **real-world exploitable exposures** across SaaS, fintech, and API-driven infrastructures.
 
-This repository documents real-world exposure cases discovered across SaaS and fintech infrastructures.
-
-The objective is to highlight how external attack surface exposure can unintentionally reveal sensitive operational assets.
+This project goes beyond passive reconnaissance by analyzing how exposed assets can be **chained, abused, and leveraged in real attack scenarios**.
 
 ---
 
-## Research focus
+## 🔍 Core Focus
 
-Our research focuses on identifying assets unintentionally exposed to the public internet, such as:
+SentryTrace targets high-impact external exposures such as:
 
-- exposed management dashboards
-- publicly accessible internal documents
-- misconfigured APIs
-- staging or development environments
-- exposed administrative interfaces
-
-All examples published in this repository have been **redacted** to remove sensitive information.
-
----
-
-## Methodology
-
-The research approach relies strictly on passive reconnaissance techniques including:
-
-- DNS and subdomain discovery
-- passive OSINT analysis
-- public API enumeration
-- search engine indexing analysis
-- exposure surface mapping
-
-No intrusive exploitation or service disruption techniques are used.
-
-More details can be found in the methodology section.
+- Misconfigured APIs (REST / GraphQL)
+- Authentication & authorization flaws (Auth flows, reset abuse, token logic)
+- Publicly exposed admin dashboards
+- Internal documents accessible via public endpoints
+- Staging / development environments
+- Business logic weaknesses exploitable at scale
 
 ---
 
-## Example exposure cases
+## ⚔️ Offensive Approach
 
-This repository includes documented case studies such as:
+Unlike traditional OSINT-based research, SentryTrace applies an **attacker mindset**:
 
-- exposed internal governance documents
-- publicly accessible management dashboards
-- exposed infrastructure assets discovered during passive reconnaissance
+- Identify exposed surface
+- Analyze response behavior & inconsistencies
+- Chain weaknesses into abuse scenarios
+- Simulate realistic attacker workflows
+- Evaluate **technical + business impact**
 
-All screenshots and artifacts have been **sanitized to remove sensitive information**.
-
----
-
-## Responsible research
-
-SentryTrace follows responsible research principles.
-
-All research examples are:
-
-- redacted
-- documented for educational purposes
-- intended to raise awareness about attack surface exposure
-
-If you believe information in this repository concerns your organization, please contact us.
+> Goal: understand not just *what is exposed*, but *how it can be exploited*.
 
 ---
 
-## Contact
+## 🧠 Methodology
 
-Security contact:
+### 1. Surface Discovery
+- Subdomain enumeration (DNS / CT logs / datasets)
+- API discovery (public endpoints, docs, JS analysis)
+- Infrastructure fingerprinting
 
-security@sentrytrace.com
+### 2. Exposure Analysis
+- Response diffing (error vs success behavior)
+- Access control validation
+- Enumeration patterns detection
+- Auth flow weaknesses
 
-Website:
+### 3. Exploitation Logic
+- Abuse chaining (example: enumeration → reset flooding)
+- Automation potential (rate limit bypass, scaling)
+- Attack scenario modeling
 
-https://sentrytrace.com
+### 4. Impact Assessment
+- Technical impact (data exposure, auth bypass, abuse vector)
+- Business impact (fraud, phishing, service disruption)
+- Real-world attacker use cases
 
 ---
 
-## Disclaimer
+## 📁 Research Content
 
-The information presented in this repository is shared for research and educational purposes only.
+This repository includes real-world case studies such as:
 
-Sensitive information has been removed and no system access or exploitation instructions are provided.
+- Authentication abuse chains (user enumeration + reset flooding)
+- Public dashboard exposures (no authentication)
+- Internal document leaks via API/media enumeration
+- Misconfigured infrastructure assets
+
+Each case includes:
+
+- Context
+- Vulnerability breakdown
+- Exploitation flow
+- Impact analysis
+- Remediation guidance
+
+---
+
+## ⚠️ Example — Authentication Abuse Chain
+
+**User Enumeration → Reset Endpoint Abuse → Account Disruption**
+
+Key issues identified:
+
+- Different responses based on account existence
+- No rate limiting on reset endpoint
+- No anti-automation protections
+
+**Result:**
+- Valid user enumeration
+- Targeted reset flooding
+- Potential service disruption / harassment
+
+---
+
+## 🎯 Key Capabilities Demonstrated
+
+- API security analysis (REST-based systems)
+- Authentication logic exploitation
+- Attack surface mapping (real environments)
+- Vulnerability chaining (not isolated bugs)
+- Business-oriented impact analysis
+- Clean and structured reporting (pentest-ready)
+
+---
+
+## 📊 Positioning
+
+This work reflects a **practical offensive security skillset** aligned with:
+
+- Penetration Testing (Web / API)
+- Application Security (AppSec)
+- Vulnerability Research
+- Bug Bounty / Triage
+
+---
+
+## 🔐 Responsible Research
+
+- All data is anonymized and redacted
+- No intrusive exploitation beyond validation
+- No sensitive data is disclosed
+- Findings are documented for educational and awareness purposes
+
+---
+
+## 📬 Contact
+
+Security inquiries / collaboration:
+
+**security@sentrytrace.com**
+
+---
+
+## ⚡ Note
+
+SentryTrace is not just about finding exposures —  
+it is about understanding how small weaknesses can become **real attack vectors** when combined.
+
+---
