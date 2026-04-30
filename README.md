@@ -1,8 +1,8 @@
 # SentryTrace — Offensive Attack Surface Intelligence
 
-SentryTrace is an independent security research initiative focused on identifying **real-world exploitable exposures** across SaaS, fintech, and API-driven infrastructures.
+SentryTrace is an independent offensive security research initiative focused on identifying real-world exploitable exposures across SaaS, fintech, and API-driven infrastructures.
 
-This project goes beyond passive reconnaissance by analyzing how exposed assets can be **chained, abused, and leveraged in real attack scenarios**.
+The project goes beyond passive reconnaissance by analyzing how exposed assets can be chained, abused, and weaponized in realistic attack scenarios.
 
 ---
 
@@ -11,7 +11,7 @@ This project goes beyond passive reconnaissance by analyzing how exposed assets 
 SentryTrace targets high-impact external exposures such as:
 
 - Misconfigured APIs (REST / GraphQL)
-- Authentication & authorization flaws (Auth flows, reset abuse, token logic)
+- Authentication & authorization flaws (auth flows, reset abuse, token logic)
 - Publicly exposed admin dashboards
 - Internal documents accessible via public endpoints
 - Staging / development environments
@@ -21,15 +21,15 @@ SentryTrace targets high-impact external exposures such as:
 
 ## ⚔️ Offensive Approach
 
-Unlike traditional OSINT-based research, SentryTrace applies an **attacker mindset**:
+SentryTrace follows an attacker-driven methodology:
 
-- Identify exposed surface
-- Analyze response behavior & inconsistencies
-- Chain weaknesses into abuse scenarios
-- Simulate realistic attacker workflows
-- Evaluate **technical + business impact**
+1. Identify exposed attack surface  
+2. Analyze response behavior & inconsistencies  
+3. Chain weaknesses into exploit scenarios  
+4. Simulate real attacker workflows  
+5. Evaluate technical + business impact  
 
-> Goal: understand not just *what is exposed*, but *how it can be exploited*.
+> Focus is not only on what is exposed, but on how it can be exploited at scale.
 
 ---
 
@@ -37,24 +37,38 @@ Unlike traditional OSINT-based research, SentryTrace applies an **attacker minds
 
 ### 1. Surface Discovery
 - Subdomain enumeration (DNS / CT logs / datasets)
-- API discovery (public endpoints, docs, JS analysis)
+- API discovery (public endpoints, JS analysis, exposed docs)
 - Infrastructure fingerprinting
 
 ### 2. Exposure Analysis
-- Response diffing (error vs success behavior)
+- Response diffing (error vs valid behavior)
 - Access control validation
-- Enumeration patterns detection
+- Enumeration pattern detection
 - Auth flow weaknesses
 
 ### 3. Exploitation Logic
-- Abuse chaining (example: enumeration → reset flooding)
-- Automation potential (rate limit bypass, scaling)
+- Abuse chaining (e.g. enumeration → reset abuse)
+- Automation potential (rate limits, scaling)
 - Attack scenario modeling
 
 ### 4. Impact Assessment
-- Technical impact (data exposure, auth bypass, abuse vector)
+- Technical impact (data exposure, auth bypass, abuse vectors)
 - Business impact (fraud, phishing, service disruption)
-- Real-world attacker use cases
+- Real attacker use cases
+
+---
+
+## ⚙️ Tooling & Automation
+
+Part of the research relies on a custom offensive orchestration pipeline:
+
+- Multi-tool chaining (subfinder, httpx, nuclei, nmap, ffuf, etc.)
+- Noise reduction (wildcard DNS filtering, soft-404 baselining, deduplication)
+- Cross-tool correlation (ownership, exposure validation)
+- Stealth logic (rate limiting, jitter, header randomization)
+- Local LLM-assisted triage (Ollama)
+
+> Raw scan data is transformed into prioritized, exploit-oriented insights.
 
 ---
 
@@ -62,7 +76,7 @@ Unlike traditional OSINT-based research, SentryTrace applies an **attacker minds
 
 This repository includes real-world case studies such as:
 
-- Authentication abuse chains (user enumeration + reset flooding)
+- Authentication abuse chains (enumeration + reset flooding)
 - Public dashboard exposures (no authentication)
 - Internal document leaks via API/media enumeration
 - Misconfigured infrastructure assets
@@ -79,40 +93,41 @@ Each case includes:
 
 ## ⚠️ Example — Authentication Abuse Chain
 
-**User Enumeration → Reset Endpoint Abuse → Account Disruption**
+User Enumeration → Reset Endpoint Abuse → Account Disruption
 
-Key issues identified:
+Key issues:
 
-- Different responses based on account existence
+- Response discrepancies based on account existence
 - No rate limiting on reset endpoint
 - No anti-automation protections
 
-**Result:**
+Result:
+
 - Valid user enumeration
 - Targeted reset flooding
-- Potential service disruption / harassment
+- Service disruption / harassment potential
 
 ---
 
-## 🎯 Key Capabilities Demonstrated
+## 🎯 Key Capabilities
 
 - API security analysis (REST-based systems)
 - Authentication logic exploitation
 - Attack surface mapping (real environments)
-- Vulnerability chaining (not isolated bugs)
-- Business-oriented impact analysis
-- Clean and structured reporting (pentest-ready)
+- Vulnerability chaining (multi-step attacks)
+- Automation-assisted recon & triage
+- Structured, client-ready reporting
 
 ---
 
 ## 📊 Positioning
 
-This work reflects a **practical offensive security skillset** aligned with:
+This work reflects a practical offensive security skillset aligned with:
 
 - Penetration Testing (Web / API)
 - Application Security (AppSec)
 - Vulnerability Research
-- Bug Bounty / Triage
+- Bug Bounty / Offensive Recon
 
 ---
 
@@ -121,21 +136,18 @@ This work reflects a **practical offensive security skillset** aligned with:
 - All data is anonymized and redacted
 - No intrusive exploitation beyond validation
 - No sensitive data is disclosed
-- Findings are documented for educational and awareness purposes
+- Findings are documented for awareness and education
 
 ---
 
 ## 📬 Contact
 
-collaboration:
-
-**contact@sentrytrace.com**
+contact@sentrytrace.com
 
 ---
 
-## ⚡ Note
+## ⚡ Final Note
 
-SentryTrace is not just about finding exposures —  
-it is about understanding how small weaknesses can become **real attack vectors** when combined.
+SentryTrace is not about collecting findings.
 
----
+It is about understanding how small weaknesses evolve into real attack paths when combine
